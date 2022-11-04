@@ -1,13 +1,13 @@
-const express = require("express");
-const router = express.Router();
+// const express = require("express");
+// const router = express.Router();
 const {User, Posts} = require('../models/all')
 
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
-const isEmail = require("validator/lib/isEmail");
+// const jwt = require("jsonwebtoken");
+// const bcrypt = require("bcryptjs");
+// const isEmail = require("validator/lib/isEmail");
 
 
-router.post("/register", async (req, res) => {
+    const createUser= async(req, res) => {
 
     try {
 
@@ -24,8 +24,7 @@ router.post("/register", async (req, res) => {
         res.status(400).json({message:e})
     }
 
-})
+}
 
+module.exports ={createUser}
 
-
-module.exports = router;

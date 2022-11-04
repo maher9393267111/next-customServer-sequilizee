@@ -11,7 +11,7 @@ const connectDB = async () => {
     await sequelize.sync(
       {
        // force:true 
-      // alter:true
+     //  alter:true
        }
       );  
 

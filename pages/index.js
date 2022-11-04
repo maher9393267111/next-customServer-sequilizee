@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios'
-import baseUrl from '../utils/baseUrl'
+import baseUrl from '../server/utils/baseUrl'
 
 export default function HomePage() {
 
@@ -15,7 +15,7 @@ const data ={
   role:'admin'
 }
 // ${baseUrl}
-const res =await axios.post(`/api/register`,data , { headers: {
+const res =await axios.post(`/api/works/createuser`,data , { headers: {
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 }
