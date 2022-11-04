@@ -1,10 +1,7 @@
-// const express = require("express");
-// const router = express.Router();
+
 const {User, Posts} = require('../models/all')
 
-// const jwt = require("jsonwebtoken");
-// const bcrypt = require("bcryptjs");
-// const isEmail = require("validator/lib/isEmail");
+
 
 
     const createUser= async(req, res) => {

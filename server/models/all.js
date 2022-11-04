@@ -15,8 +15,46 @@ const Posts = sequelize.define("post", {
   image:{type:DataTypes.STRING ,allowNull:true}
 });
 
-User.hasMany(Posts);
+
+
+const Category=  sequelize.define("category", {
+    id: {
+        type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true 
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+  })
+  
+
+  const Blog = sequelize.define("blog", {
+    id: {
+        type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true 
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    content: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+  })
+  
+
+
+
+
+
+Category.hasMany(Posts);
 Posts.belongsTo(User, { onDelete: "CASCADE" });
+
+
+Category.hasMany(Blog)
+Blog.belongsTo(Category ,{ onDelete:"CASCADE"})
+
 
 // const Basket = sequelize.define('basket', {
 //     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -89,4 +127,6 @@ Posts.belongsTo(User, { onDelete: "CASCADE" });
 module.exports = {
   User,
   Posts,
+  Category,
+  Blog
 };
