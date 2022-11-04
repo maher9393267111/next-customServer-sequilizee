@@ -14,7 +14,11 @@ const data ={
   password:'1211212',
   role:'admin'
 }
-const res =await axios.post(`${baseUrl}/api/register`,data)
+const res =await axios.post(`${baseUrl}/api/register`,data , { headers: {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json'
+}
+},)
 
 console.log('res--->>>', res)
 
