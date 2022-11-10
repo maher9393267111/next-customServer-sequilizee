@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios'
 import baseUrl from '../server/utils/baseUrl'
+import Button from '@mui/material/Button';
 
 export default function HomePage() {
 
@@ -30,7 +31,7 @@ console.log('res--->>>', res)
   return (
     <div>
       <h1> <button onClick={createuser} className=''>Create newUser </button></h1>
-      
+      <Button variant="contained">Hello World</Button>
       
       
         </div>
